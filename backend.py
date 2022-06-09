@@ -1,5 +1,6 @@
 from __future__ import print_function
 from sys import platform
+import os
 import time
 from flask import Flask, render_template, request, url_for, flash, redirect
 from mailmerge import MailMerge
@@ -7,9 +8,10 @@ import uno
 import pdfkit
 from comtypes.client import CreateObject
 from dotenv import load_dotenv
+load_dotenv()
+
 wdFormatPDF = 17
 
-load_dotenv()
 
 config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
 options = {'--load-error-handling': 'ignore'}
@@ -21,7 +23,7 @@ document = MailMerge(template_docx)
 print(document.get_merge_fields())
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = SECRET_KEY
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 
 @app.route("/")
