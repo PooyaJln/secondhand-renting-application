@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Brf skildra, Andrahandsuthyrning</title>
+
+
+        <h2>Brf Skildra, Ansökan om andrahandsuthyrning</h2>
+        <p><b> Ansökan om andrahandsuthyrning ska vara tillhanda styrelsen 1 månad innan
+                startdatum för uthyrningstiden.​</b><br>
+            <b><u>Alla</u></b> ​fält nedan är obligatoriska och ska vara ​ korrekt
+            ifyllda innan beslut kan tas av styrelsen. Vid behov av korrigering eller behov av ytterligare
+            uppgifter för att komplettera ansökningen kontaktar styrelsen den sökande. Vid funderingar
+            kring hur man ska fylla i blanketten går det alltid att höra av sig till <a
+                href="mailto:brf.skildra@outlook.com">brf.skildra@outlook.com</a>​ .
+            Andrahandsuthyrning ​ får ej​ påbörjas innan beslut har tagits av styrelsen och enbart
+            genomföras med Brf Skildras godkännande.
+            Det är denna blankett som gäller vid ansökningar om andrahandsuthyrning i Brf Skildra. Alla
+            andra typer av dokument ​ godkänns ej.</p>
+    </head>
+    <nav>
+        <img src="alejandroescamilla-somethingpretty.jpg" style="width: 1400;height: 933;" alt="headerphoto">
+    </nav>
+
+    <body>
+        <h4>Kontraktsinnehavare:</h4>
+        <form action="/submission_page.html" method="post">
+            <label for="landper_fname"> Ditt namn</label>
+            <input type="text" name="landper_fname" id="landper_fname" required><br><br>
+
+            <label for="landper_lname"> Ditt efternamn</label>
+            <input type="text" name="landper_lname" id="landper_name" required><br><br>
+
+            <label for="trp"> trapphus beteckning </label>
+            <select id="trp" name="trp">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+            </select><br>
+
+            <label for="lgn"> lägenhetsnummer</label>
+            <input type="text" placeholder="2-1102" name="lgn" id="lgn" required><br><br>
+
+            <label for="Postn"> Postnummer</label>
+            <input type="text" placeholder="75429" name="Postn" id="Postn" required><br><br>
+
+            <label for="ort"> Ort</label>
+            <input type="text" name="ort" id="ort" required><br><br>
+
+            <label for="mobiln"> Telefonnummer/mobil</label> <small> (Format: 073-1234567)</small>
+            <input type="tel" placeholder="07x-1234567" name="mobiln" id="mobiln" pattern="[0-9]{3}-[0-9]{7}"
+                required><br><br>
+
+            <label for="email"> Mailadress</label>
+            <input type="email" name="email" id="email" required><br>
+
+
+            <h5>Önskad tidsperiod för uthyrning fr.o.m - t.o.m</h5>
+
+            <label for="startdate"> Fr.o.m ​</label>
+            <input type="date" name="startdate" id="startdate" required>
+
+            <label for="enddate"> T.o.m​</label>
+            <input type="date" name="enddate" id="enddate" required><br>
+
+            <h5>Adress där ni vistas under andrahandsuthyrningen och uppgift om kontaktperson.</h5>
+            <label for="landper_ny_adr_fname"> Förnamn</label>
+            <input type="text" name="landper_ny_adr_fname" id="landper_ny_adr_fname" required><br><br>
+
+            <label for="llandper_ny_adr_lname"> efternamn</label>
+            <input type="text" name="landper_ny_adr_lname" id="landper_ny_adr_name" required><br><br>
+
+            <label for="ny_adrs"> Gatuadress</label>
+            <input type="text" name="ny_adrs" id="ny_adrs" required><br><br>
+
+            <label for="ny_postn"> Postnummer</label>
+            <input type="text" name="ny_postn" id="ny_postn" required><br><br>
+
+            <label for="ny_ort"> Ort</label>
+            <input type="text" name="ny_ort" id="ny_ort" required><br><br>
+
+            <hr>
+            <h4>Uppgifter om person som önskar hyra i andra hand</h4>
+
+            <label for="tnt_pnmbr"> Hyresgästs Personnummer</label>
+            <input type="text" name="tnt_pnmbr" id="tnt_pnmbr" required><br>
+
+            <label for="tnt_fname"> Hyresgästs förnamn</label>
+            <input type="text" name="tnt_fname" id="tnt_fname" required><br>
+
+            <label for="tnt_lname"> Hyresgästs efternamn</label>
+            <input type="text" name="tnt_lname" id="tnt_lname" required><br>
+
+            <label for="tnt_mployr"> Hyresgästs arbetsgivare</label>
+            <input type="text" name="tnt_mployr" id="tnt_mployr" required><br>
+
+            <label for="tnt_mobiln"> Telefonnummer/mobil</label>
+            <input type="tel" placeholder="07x-1234567" name="tnt_mobiln" id="tnt_mobiln" pattern="[0-9]{3}-[0-9]{7}"
+                required><br>
+
+            <label for="tnt_email"> Mailadress</label>
+            <input type="email" name="tnt_email" id="tnt_email" required><br>
+
+            <label for="tnt_mplyr_mobiln"> arbetsgivares telefonnummer/mobil</label>
+            <input type="tel" placeholder="07x-1234567" name="tnt_mplyr_mobiln" id="tnt_mplyr_mobiln"
+                pattern="[0-9]{3}-[0-9]{7}" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </body>
+
+</html>

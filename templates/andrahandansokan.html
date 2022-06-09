@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="sv">
+
+    <head>
+        <title>Brf Skildra | andrahandsuthyrning ansökan </title>
+        <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} text-center">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %} -->
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://printjs-4de6.kxcdn.com/print.min.css"></script>
+        <link rel="stylesheet" type="text/css" href="print.css">
+        <script>
+            function PrntBtnEnbl() {
+                document.getElementsById("printbutton").disabled=false;
+                document.getElementsById("printbutton").classList.toggle("btn btn-primary mb-2 d-print-none");
+                // var element = document.getElementById("printbutton");
+                // element.disabled=false;
+                // element.classList.toggle("btn btn-primary mb-2 d-print-none");
+            }
+        </script>
+
+
+    </head>
+
+    <body>
+        <div class="jumbotron text-left">
+            <h2>Brf Skildra, Ansökan om andrahandsuthyrning</h2>
+            <p class="text-justify"><b> Ansökan om andrahandsuthyrning ska vara tillhanda styrelsen 1 månad innan
+                    startdatum för uthyrningstiden.​</b><br>
+                <b><u>Alla ​fält</u></b> ​fält nedan är obligatoriska och ska vara​ korrekt
+                ifyllda innan beslut kan tas av styrelsen. Vid behov av korrigering eller behov av ytterligare
+                uppgifter för att komplettera ansökningen kontaktar styrelsen den sökande. Vid funderingar
+                kring hur man ska fylla i blanketten går det alltid att höra av sig till <a
+                    href="mailto:brf.skildra@outlook.com">brf.skildra@outlook.com</a>​.<br>
+                Andrahandsuthyrning <strong>får ej</strong> påbörjas innan beslut har tagits av styrelsen och enbart
+                genomföras med Brf Skildras godkännande.
+                Det är denna blankett som gäller vid ansökningar om andrahandsuthyrning i Brf Skildra. Alla
+                andra typer av dokument ​godkänns ej.</p>
+        </div>
+        <div class="container">
+            <form  method="post" id="printJS-form">
+
+            <!-- <form action="{{ url_for('success_submit')}}" method="post" id="printJS-form"> -->
+                <fieldset>
+                    <legend>Kontraktsinnehavare:</legend>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="landper_fname" class="mr-sm-2"> Namn</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="landper_fname" id="landper_fname"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label for="landper_lname" class="mr-sm-2"> Efternamn</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="landper_lname" id="landper_name"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label class="mr-sm-2" for="lgh_nmr">Lägenhetsnummer</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="lgh_nmr" id="lgh_nmr"
+                                pattern="[0-9]{1}-[0-9]{4}" placeholder="1-1234" required>
+                        </div>
+                        <div class="col">
+                            <label class="mr-sm-2" for="gatu">Gatuadress</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="gatu" id="gatu"
+                                placeholder="Råbyvägen 57" required>
+                        </div>
+                        <div class="col">
+                            <label class="mr-sm-2" for="trp"> trapphus </label>
+                            <select class="custom-select mr-sm-2" id="trp" name="trp">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                            </select>
+                        </div>
+
+                        <div class="col">
+                            <label class="mr-sm-2" for="Postnr">Postnummer</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="Postnr" id="Postnr"
+                                pattern="[0-9]{5}" placeholder="75429" required>
+                        </div>
+                        <div class="col">
+                            <label class="mr-sm-2" for="lgh_ort">Ort</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="lgh_ort" id="lgh_ort"
+                                placeholder="Uppsala" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="landper_mblnr" class="mr-sm-2"> Mobil- eller telefonnummer</label>
+                            <input type="tel" class="form-control mb-2 mr-sm-2" name="landper_mblnr" id="landper_mblnr"
+                                pattern="[0-9]{3}-[0-9]{7}" required>
+                        </div>
+                        <div class="col">
+                            <label for="landper_email" class="mr-sm-2"> Email</label>
+                            <input type="email" class="form-control mb-2 mr-sm-2" name="landper_email"
+                                id="landper_email" required>
+                        </div>
+                    </div>
+                    <p class="text-align-left">Önskad tidsperiod för uthyrning fr.o.m - t.o.m</p>
+                    <div class="form-inline">
+                        <!-- <div class="col"> -->
+                        <label for="startdate" class="mr-sm-2"> Fr.o.m</label>
+                        <input type="date" class="form-control mb-2 mr-sm-2" name="startdate" id="startdate" required>
+                        <!-- </div> -->
+                        <!-- <div class="col"> -->
+                        <label for="enddate" class="mr-sm-2"> T.o.m</label>
+                        <input type="date" class="form-control mb-2 mr-sm-2" name="enddate" id="enddate" required>
+                        <!-- </div> -->
+                    </div>
+                    <p class="text-align-left">Adress där ni vistas under andrahandsuthyrningen och uppgift om
+                        kontaktperson.</p>
+                    <div class="row">
+                        <div class="col">
+                            <label for="landper_co_fname" class="mr-sm-2">c/o Namn</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="landper_co_fname"
+                                id="landper_co_fname" required>
+                        </div>
+                        <div class="col">
+                            <label for="landper_co_lname" class="mr-sm-2"> Efternamn</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="landper_co_lname"
+                                id="landper_co_lname" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="landper_ny_adress" class="mr-sm-2"> Gatunamn samt nummer</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="landper_ny_adress"
+                                id="landper_ny_adress" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="landper_ny_postn" class="mr-sm-2"> Postnummer</label>
+                            <input type="zip" class="form-control mb-2 mr-sm-2" name="landper_ny_postn"
+                                id="landper_ny_postn" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="landper_ny_ort" class="mr-sm-2"> Ort</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="landper_ny_ort"
+                                id="landper_ny_ort" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <br>
+
+
+                <div class="form-group">
+                    <label for="skal">Skäl till uthyrning: Se till att ni har läst igenom föreningens stadgar innan ni
+                        fylleri ansökan om andrahandsuthyrning så att ni är väl medvetna om de krav som ställs för att
+                        få hyra ut och vad ni som fortsatt är ägare av lägenheten är skyldiga till vid godkännande
+                        avuthyrning. <a
+                            href="https://www.brfskildra.se/Homepage/Download-File/f/1129941/h/2d88e7db029c3dd9e7039536d615aae1/Stadgar">stadgar</a>
+                    </label>
+                    <textarea class="form-control" name="skal" id="skal" rows="3"></textarea>
+                </div>
+
+                <fieldset>
+                    <legend class="text-align-left">Uppgifter om personen som önskar hyra i andra hand</legend>
+                    <div class="row">
+                        <div class="col">
+                            <label for="tnt_fname" class="mr-sm-2"> Namn</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="tnt_fname" id="tnt_fname"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label for="tnt_lname" class="mr-sm-2"> Efternamn</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="tnt_lname" id="tnt_lname"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="tnt_mblnr" class="mr-sm-2"> Mobil- eller telefonnummer</label>
+                            <input type="tel" class="form-control mb-2 mr-sm-2" name="tnt_mblnr" id="tnt_mblnr"
+                                pattern="[0-9]{3}-[0-9]{7}" required>
+                        </div>
+                        <div class="col">
+                            <label for="tnt_email" class="mr-sm-2"> Email</label>
+                            <input type="email" class="form-control mb-2 mr-sm-2" name="tnt_email" id="tnt_email"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="tnt_arbtgvr" class="mr-sm-2"> Arbetsgivare</label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" name="tnt_arbtgvr" id="tnt_arbtgvr"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label for="tnt_arbgvr_mblnr" class="mr-sm-2"> Arbetsgivares telefonnummer</label>
+                            <input type="tel" class="form-control mb-2 mr-sm-2" name="tnt_arbgvr_mblnr"
+                                id="tnt_arbgvr_mblnr" pattern="[0-9]{3}-[0-9]{7}" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <div class="col">
+                        <label for="nuv_hyrsgst" class="mr-sm-2"> Nuvarande hyresgäst: <small>(behöver ej fyllas i om
+                                lägenheten inte hyrs ut i nuläget)</small></label>
+                        <input type="text" class="form-control mb-2 mr-sm-2" name="nuv_hyrsgst" id="nuv_hyrsgst">
+                    </div>
+                </div>
+                <hr>
+                <p class="text-justify">Kontraktsinnehavaren är efter underskrift medveten om att denne fortfarande är
+                    ansvarig förlägenheten och att avgiften till föreningen betalas i tid. Vidare så tar Brf Skildra ut
+                    en avgift på 10% för andrahandsuthyrningen som baseras på ett årligt prisbasbelopp. Denna
+                    kostnadläggs på den ordinarie hyran under den godkända uthyrningstiden. För mer frågor kring
+                    detta, kontakta styrelsen på <a href="mailto:brf.skildra@outlook.com">brf.skildra@outlook.com</a>​.
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <label for="underskrift" class="mr-sm-2"> underskrift</label>
+
+                    </div>
+                    <div class="col">
+                        <label for="undrs_ort" class="mr-sm-2"> ort</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2" name="undrs_ort" id="undrs_ort" required>
+                    </div>
+                    <div class="col">
+                        <label for="datum" class="mr-sm-2"> datum</label>
+                        <input type="date" class="form-control mb-2 mr-sm-2" name="datum" id="datum" required>
+                    </div>
+                </div>
+                <button type="button" onclick="PrntBtnEnbl()" class="btn btn-primary mb-2 d-print-none">Submit</button>
+                <button type="reset" class="btn btn-primary mb-2 d-print-none">Reset</button>
+                <button type="button" disabled class="btn btn-secondary mb-2 d-print-none" id="printbutton"
+                onclick="printJS({ printable: 'printJS-form', type:'html', css: ['https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css']})">
+                Skriv ut som
+                PDF</button>
+
+            </form>
+
+
+        </div>
+
+
+
+        <!-- Optional JavaScript -->
+
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+        <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+
+
+    </body>
+
+</html>
