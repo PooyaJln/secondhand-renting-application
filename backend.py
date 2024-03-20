@@ -7,8 +7,12 @@ from mailmerge import MailMerge
 import uno
 import pdfkit
 from comtypes.client import CreateObject
+from pathlib import Path
 from dotenv import load_dotenv
+
 load_dotenv()
+# env_path = Path('.')/'.env'
+# load_dotenv(dotenv_path=env_path)
 
 wdFormatPDF = 17
 
@@ -18,8 +22,10 @@ options = {'--load-error-handling': 'ignore'}
 
 template_docx = "docs/andrahandansokan2.docx"
 
-template_odt = "docs/andrahandansokan.odt"
+# template_odt = "docs/andrahandansokan.odt"
+
 document = MailMerge(template_docx)
+
 print(document.get_merge_fields())
 
 app = Flask(__name__)
@@ -40,13 +46,9 @@ def ansokan():
 @app.route("/success_ansok", methods=['POST', 'GET'])
 def success_submit():
     if request.method == "POST":
-        # print(request.form)
-        docx_out_name = "andrahandansokan_lgh_{0}_{1}.docx".format(
-            request.form['lgh_nmr'], request.form['datum'])
-        odt_out_name = "andrahandansokan_lgh_{0}_{1}.odt".format(
-            request.form['lgh_nmr'], request.form['datum'])
-        pdf_out_name = "andrahandansokan_lgh_{0}_{1}.pdf".format(
-            request.form['lgh_nmr'], request.form['datum'])
+        docx_out_name = "andrahandansokan_lgh_{0}_{1}.docx".format(request.form['lgh_nmr'], request.form['datum'])
+        # odt_out_name = "andrahandansokan_lgh_{0}_{1}.odt".format(request.form['lgh_nmr'], request.form['datum'])
+        pdf_out_name = "andrahandansokan_lgh_{0}_{1}.pdf".format(request.form['lgh_nmr'], request.form['datum'])
 
         document.merge(landper_fname=request.form['landper_fname'],
                        landper_lname=request.form['landper_lname'],
@@ -83,31 +85,6 @@ def success_submit():
         if platform == 'linux' or platform == 'linux2':
             pdfkit.from_file(docx_out_name, pdf_out_name,
                              configuration=config, options=options)
-
-        # print(landper_fname)
-        # print(landper_lname)
-        # print(lgh_nmr)
-        # print(trp)
-        # print(landper_mblnr)
-        # print(landper_email)
-        # print(startdate)
-        # print(enddate)
-        # print(landper_co_fname)
-        # print(landper_co_lname)
-        # print(landper_ny_adress)
-        # print(landper_ny_postn)
-        # print(landper_ny_ort)
-        # print(skal)
-        # print(tnt_fname)
-        # print(tnt_lname)
-        # print(tnt_mblnr)
-        # print(tnt_email)
-        # print(tnt_arbtgvr)
-        # print(tnt_arbgvr_mblnr)
-        # print(nuv_hyrsgst)
-        # print(underskrift)
-        # print(undrs_ort)
-        # print(datum)
 
         # flash(f'Din ansökan skickades', 'success')
         return redirect(url_for('ansokan'))
